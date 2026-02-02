@@ -12,7 +12,7 @@ class Product {
     }
 }
 
-public class ProductMain {
+public class Main {
 
     static double calculateTotal(Product[] products) {
         double total = 0;
@@ -23,15 +23,20 @@ public class ProductMain {
     }
 
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         Product[] products = new Product[5];
 
+        // Read input
         for (int i = 0; i < 5; i++) {
             int pid = sc.nextInt();
             double price = sc.nextDouble();
             int quantity = sc.nextInt();
             products[i] = new Product(pid, price, quantity);
         }
+
+       
+        System.out.println("Input read successfully");
 
         int maxPid = products[0].pid;
         double maxPrice = products[0].price;
@@ -47,3 +52,4 @@ public class ProductMain {
         System.out.println("Total amount spent: " + calculateTotal(products));
     }
 }
+
